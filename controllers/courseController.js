@@ -14,7 +14,7 @@ const createCourse = asyncHandler(async(req,res)=>{
 
 const getAllCourse = asyncHandler(async(req,res)=>{
     try{
-        const allCourse = await Course.find()
+        const allCourse = await Course.find().sort({_id : - 1});
         res.json(allCourse)
     }catch(error)
     {
@@ -39,7 +39,7 @@ const getSingleCourse = asyncHandler(async(req,res)=>{
 const updateCourse = asyncHandler(async(req,res)=>{
     try{
         const {id} = req.params
-        const courseUpdate = await Course.findByIdAndUpdate(id,req.params,{new :true})
+        const courseUpdate = await Course.findByIdAndUpdate(id,req.body,{new :true})
         res.json(courseUpdate)
     }catch(error)
     {

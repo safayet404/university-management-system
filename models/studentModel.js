@@ -22,6 +22,7 @@ var studentSchema = new mongoose.Schema({
     studentId:{
         type:String,
         required:true,
+        unique : true
     },
     department : {
         type : String,
@@ -31,7 +32,6 @@ var studentSchema = new mongoose.Schema({
         type : String,
         default : "student"
     },
-    coursesEnrolled: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Course' }],
     dateOfBirth : {type:String},
     address : {type : String},
     contactNumber : {type : String},
@@ -43,13 +43,13 @@ var studentSchema = new mongoose.Schema({
 });
 
 
-studentSchema.pre('save',async function(next){
-    const salt = await bcrypt.genSaltSync(10)
-    this.password = await bcrypt.hash(this.password,salt)
-})
+// studentSchema.pre('save',async function(next){
+//     const salt = await bcrypt.genSaltSync(10)
+//     this.password = await bcrypt.hash(this.password,salt)
+// })
 
-studentSchema.methods.isPasswordMatched = async function(enterdPassword){
-    return await bcrypt.compare(enterdPassword,this.password)
-}
+// studentSchema.methods.isPasswordMatched = async function(enterdPassword){
+//     return await bcrypt.compare(enterdPassword,this.password)
+// }
 
 module.exports = mongoose.model('Student', studentSchema);

@@ -7,7 +7,7 @@ router.post('/create-notice',createNotice)
 
 router.get('/all-notice',getAllNotice)
 router.get('/single-notice/:id',getSingleNotice)
-router.put('/update-notice/:id',updateNotice)
+router.patch('/update-notice/:id',updateNotice)
 router.delete('/delete-notice/:id',deleteNotice)
 
 module.exports = router

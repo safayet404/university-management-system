@@ -7,7 +7,7 @@ router.post('/create-course',createCourse)
 
 router.get('/all-course',getAllCourse)
 router.get('/single-course/:id',getSingleCourse)
-router.put('/update-course/:id',updateCourse)
+router.patch('/update-course/:id',updateCourse)
 router.delete('/delete-course/:id',deleteCourse)
 
 module.exports = router

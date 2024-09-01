@@ -20,7 +20,8 @@ var facultySchema = new mongoose.Schema({
     },
     employeeId : {
         type : String,
-        required : true
+        required : true,
+        unique : true
     },
     role : {
         type : String,
@@ -34,9 +35,6 @@ var facultySchema = new mongoose.Schema({
         type : String,
     },
     dateOfJoining : {
-        type : String,
-    },
-    contactNumber : {
         type : String,
     },
     createdAt : {

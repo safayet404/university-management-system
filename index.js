@@ -46,6 +46,12 @@ app.use('/api/admin',adminRouter)
 app.use('/api/assignment',assignmentRouter)
 app.use('/api/attendance',attendanceRouter)
 app.use('/api/course',courseRouter)
+app.use('/api/department',departmentRouter)
+app.use('/api/ernrollment',enrollmentRouter)
+app.use('/api/faculty',facultyRouter)
+app.use('/api/grade',gradeRouter)
+app.use('/api/notice',noticeRouter)
+app.use('/api/student',studentRouter)
 
 
 

@@ -15,7 +15,7 @@ const createNotice = asyncHandler(async(req,res)=>{
 
 const getAllNotice = asyncHandler(async(req,res)=>{
     try{
-        const allNotice = await Notice.find()
+        const allNotice = await Notice.find().sort({_id : - 1});
         res.json(allNotice)
     }catch(error)
     {
